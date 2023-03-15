@@ -12,9 +12,7 @@ import Alert from "./components/Alert";
 //   Route,
 //   Link
 // } from "react-router-dom"; 
-
-// ----------- gh pages -> router Issue 
-// import { BrowserRouter as Router,Routes ,Route } from 'react-router-dom';
+import { BrowserRouter as Router,Routes ,Route } from 'react-router-dom';
 // React uses partial matching -- so better to write whole path /about/go aesa
 
 
@@ -32,28 +30,26 @@ function App() {
   }
 
   return (
-    <>
-    {/* <Router> */}
+    <Router>
       <Navbar title="TextUtils" about="About US"/>
       <Alert alert = {alert}></Alert>
     {/* <Layout> */}
-      {/* <Routes> */}
-        {/* <Route exact path="/" element={<div className="container my-3"> */}
-        <div className="container my-3">
+      <Routes>
+        <Route exact path="/" element={<div className="container my-3">
     <TextForm showAlert={showAlert} heading="Enter the text to analyze below"/>
     <About showAlert={showAlert}/>
-    {/* </div>}/> */}
-    </div> 
-        {/* <Route exact path="/about" element={<About showAlert={showAlert}/>}/> */}
+    </div>}/>
+        <Route exact path="/about" element={<About showAlert={showAlert}/>}/>
         {/* <Route exact path="/recovery-password" element={<RecoveryPassword/>}/> */}
         {/* <Route path="*" element={<NotFound/>}/> */}
-      {/* </Routes> */}
+      </Routes>
     {/* </Layout> */}
-  {/* </Router> */}
+  </Router>
 
 
 
-    {/* // <>
+
+    // <>
     // <Navbar title="TextUtils" about="About US"/>
     // <Alert alert = {alert}></Alert>
     // <div className="container my-3">
@@ -63,8 +59,7 @@ function App() {
     
 
     // <About showAlert={showAlert}/>
-    // </> */}
-    </>
+    // </>
   );
 }
 

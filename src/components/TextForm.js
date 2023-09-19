@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+
+
   const handleUpClick = () => {
-    // console.log("Upper case was clicked" );
     let newText = text.toUpperCase();
-    setText(newText); //_> change in state
+    setText(newText);
     props.showAlert("success","Changed to Uppercase");
   };
 
-  //TO handle the error in console
+
   const handleOnChange = (event) => {
-    // console.log("Onchange gg");
     setText(event.target.value); // _> will be able to change the content now
   };
 
@@ -97,8 +97,7 @@ export default function TextForm(props) {
         <p>{0.008 * text.split(" ").length} minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0 ? text : "Enter Something to preview"}</p>
-      </div>
-      {/* <Navbar></Navbar> */}
+      </div> 
     </>
   );
 }
